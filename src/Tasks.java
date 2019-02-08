@@ -1,10 +1,10 @@
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tasks {
-
 
     public void getMyFile (String pathOfFile){
         try{
@@ -19,6 +19,17 @@ public class Tasks {
             }
         }catch (Exception e){
             System.out.println("File not found");
+        }
+    }
+
+    public void addItemToMyList (String pathOfFile, String addThisLine){
+        try {
+            Path filePath = Paths.get(pathOfFile);
+            List<String> lines = Files.readAllLines(filePath);
+            lines.add(addThisLine);
+            Files.write(filePath, lines);
+        } catch (Exception e){
+            System.out.println("Can't add it to your file :( ");
         }
     }
 }
