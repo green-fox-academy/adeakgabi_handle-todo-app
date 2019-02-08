@@ -6,7 +6,7 @@ import java.util.List;
 public class Tasks {
 
 
-    public static void getMyFile (String pathOfFile){
+    public void getMyFile (String pathOfFile){
         try{
             Path filePath = Paths.get(pathOfFile);
             List<String> lines = Files.readAllLines(filePath);
