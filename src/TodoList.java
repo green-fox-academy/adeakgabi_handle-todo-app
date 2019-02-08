@@ -7,7 +7,7 @@ public class TodoList {
         }
         if(args[0].equals("-l")) {
             Tasks task = new Tasks();
-            task.getMyFile("C:\\Users\\Gabi\\greenfox\\TodoApp\\adeakgabi_handle-todo-app\\text.txt");
+            task.getMyFile("C:\\Users\\Gabi\\greenfox\\TodoApp\\adeakgabi_handle-todo-app\\Text.txt");
         }
     }
 }

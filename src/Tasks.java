@@ -10,8 +10,12 @@ public class Tasks {
         try{
             Path filePath = Paths.get(pathOfFile);
             List<String> lines = Files.readAllLines(filePath);
-            for (String line : lines) {
-                System.out.println(line);
+            if (lines.size() == 0){
+                System.out.println("No todos for today! :)");
+            } else {
+                for (int i = 0; i < lines.size(); i++) {
+                    System.out.println(i+1 + lines.get(i));
+                }
             }
         }catch (Exception e){
             System.out.println("File not found");
