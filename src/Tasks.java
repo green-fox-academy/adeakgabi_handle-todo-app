@@ -29,7 +29,18 @@ public class Tasks {
             lines.add(addThisLine);
             Files.write(filePath, lines);
         } catch (Exception e){
-            System.out.println("Can't add it to your file :( ");
+            System.out.println("Unable to add: no task provided");
+        }
+    }
+
+    public void removeItemFromList(String pathOfFile, int index){
+        try {
+            Path filePath = Paths.get(pathOfFile);
+            List<String> lines = Files.readAllLines(filePath);
+            lines.remove(index);
+            Files.write(filePath, lines);
+        } catch (Exception e){
+            System.out.println("Unable to remove line :(");
         }
     }
 }
